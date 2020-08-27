@@ -6,7 +6,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.ts"
+    
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
@@ -51,5 +54,8 @@
       "vue-cli-service lint",
       "git add"
     ]
-  }
+  },
+  "repository": "https://github.com/Konschier/uplanner.git",
+  "author": "Konschier <maykonschier@gmail.com0>",
+  "license": "MIT"
 }
