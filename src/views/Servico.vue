@@ -1,12 +1,17 @@
 <template>
   <div class="home">
-    <modal v-if="showModal" @close="showModal = false">
+    <b-modal
+      id="modal-1"
+      title="BootstrapVue"
+      v-if="showModal"
+      @close="showModal = false"
+    >
       <!--
       you can use custom content here to overwrite
       default content
     -->
       <h3 slot="header">custom header</h3>
-    </modal>
+    </b-modal>
     <div class="row">
       <div class="col-lg-12">
         <div class="card">
@@ -14,9 +19,12 @@
             <h4 class="card-title">Lista de servicos</h4>
             <ul class="icons-list">
               <li v-for="servico in listaDeServico" :key="servico.id">
-                <a href="#" v-on:click="openService(servico)">{{
-                  servico.descricao
-                }}</a>
+                <a
+                  v-b-modal.modal-1
+                  href="#"
+                  v-on:click="openService(servico)"
+                  >{{ servico.descricao }}</a
+                >
               </li>
             </ul>
             <br />
@@ -86,7 +94,7 @@ export default class Home extends Vue {
   ];
   showModal = false;
 
-  openService(servico: any) {
+  openService(servico: string) {
     console.log(servico);
     this.showModal = true;
   }
